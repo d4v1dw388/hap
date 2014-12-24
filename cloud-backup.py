@@ -1,4 +1,6 @@
 import easywebdav
+import os
+import datetime
 
 
 class CloudBackup:
@@ -15,14 +17,29 @@ class CloudBackup:
             username=cloud['username'],
             password=cloud['password'])
 
-    def connect(self):
+    def test(self):
         try:
             self.w.download('lala', 'lala')
             print('OK')
         except:
             print('Did not work')
 
-        self.w.session.close()
+    def upload(self, localfiles):
+        try:
+            remotepath = datetime.datetime.utcnow().isoformat().replace(':', '_')
+            self.w.mkdir(remotepath)
+        except:
+            print('Dir creation did not work')
+
+        for localfile in localfiles:
+            try:
+                remotefile = os.path.basename(localfile)
+
+                remotefilepath = os.path.join(remotepath, remotefile)
+                print('Uploading ' + localfile + ' to ' + remotefilepath)
+                self.w.upload(localfile, remotefilepath)
+            except:
+                print('Did not work')
 
 if __name__ == '__main__':
     print('Testing Cloud Storage')
@@ -31,4 +48,5 @@ if __name__ == '__main__':
     from secrets import mycloud as c
 
     cb = CloudBackup(c)
-    cb.connect()
+
+    cb.upload(['boiler.rrd'])
