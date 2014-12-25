@@ -38,7 +38,7 @@ class Deploy:
 
         # Deploy log-boiler.py to hap-deployed on RPi
         ftp = self.ssh.open_sftp()
-        filelist = ['log-boiler.py', 'cloud-backup.py']
+        filelist = ['log-boiler.py', 'cloud-backup.py', 'create-graphs.py']
         for f in filelist:
             ftp.put(f, 'hap-deployed/' + f)
         ftp.close()
