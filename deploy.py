@@ -19,6 +19,11 @@ Steps not done by the script:
    # sudo update-rc.d hap-log-boiler defaults
    # sudo service hap-log-boiler start
 
+ * Same for create-graphs.py
+
+ * crontab -e
+   0 3 * * * /usr/bin/python /home/pi/hap-deployed/cloud-backup.py
+
 """
 class Deploy:
     def __init__(self):
