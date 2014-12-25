@@ -49,4 +49,4 @@ if __name__ == '__main__':
 
     cb = CloudBackup(c)
 
-    cb.upload(['boiler.rrd'])
+    cb.upload(['/home/pi/hap-deployed/boiler.rrd'])
