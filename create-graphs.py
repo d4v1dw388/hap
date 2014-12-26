@@ -31,8 +31,9 @@ class CreateGraphs:
             rrdtool.graph(
                 png_file_boiler + str(t) + '.png',
                 '-s N-%s' % (t,),
-                '-w 1000',
-                '-h  400',
+                '-w 800',
+                '-h 350',
+                '-m 2',
                 '--vertical-label', 'State',
 
                 'DEF:burner=%s:burner:AVERAGE' % (rrd_file_boiler,),
