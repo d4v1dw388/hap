@@ -1,0 +1,56 @@
+/*Webfont */
+@font-face {
+  font-family: CartoGothic;
+  src: url(fonts/CartoGothicStd-Book.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+@font-face {
+  font-family: CartoGothic;
+  src: url(fonts/CartoGothicStd-Bold.otf) format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: CartoGothic;
+  src: url(fonts/CartoGothicStd-Italic.cotf) format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: CartoGothic;
+  src: url(fonts/CartoGothicStd-BoldItalic.otf) format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Verwendung der geladenen Schrift */
+body { 
+	font-family:"CartoGothic";
+	font-size: 24px;
+}
+
+body {
+	margin: 0px;
+/*	overflow: hidden;*/
+	background-color: #999999;
+}
+
+div.centre
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.t {
+	width: 80%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #bbbbbb;
+	padding: 10px;
+}
